@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
     <script src="angular.min.js">  </script>
+    <style>
+        .red{border-color: red;}
+        .green{border-color: green;}
+    </style>
 </head>
-<body ><p>{{ 8+2 }}</p>
-<div ng-app><p>{{ 8+2 }}</p> </div>    
+<body ng-app>
+        <p>{{ 8+2 }}</p>
+        <input type="text" ng-model="user">
+        <h2>{{ user }}</h2>
+        <div>
+            <label>show me the paragraph
+            <input type="checkbox" ng-model="checked">
+            <h2>{{ checked }}</h2> </label>
+            <p ng-if="checked">show the paragraph</p>
+        </div>
+        <div ng-init="mynumber=15">
+            <input type="text" ng-model="guess" ng-class="{red:guess!=mynumber, green:guess==mynumber}">
+        </div>
 </body>
 </html>
