@@ -17,8 +17,20 @@
             <h2>{{ checked }}</h2> </label>
             <p ng-if="checked">show the paragraph</p>
         </div>
-        <div ng-init="mynumber=15">
-            <input type="text" ng-model="guess" ng-class="{red:guess!=mynumber, green:guess==mynumber}">
+        <div ng-init="myNumber=15">
+            <input type="text" ng-model="guess" ng-class="{red:guess!=myNumber, green:guess==myNumber}">
+        </div>
+        <div ng-init="numArray=[1,2,3,3,4,5,6,7,8,9]">
+            <ul>
+                <li ng-repeat="val in numArray track by $index">{{val}}</li>  
+            </ul>
+        </div>
+        <div ng-init="students=[{name:'jasna',subject:'maths',age:21},
+                                {name:'anu',subject:'english',age:11},
+                                {name:'manu',subject:'it',age:10}]">
+            <ul>
+                 <li ng-repeat="val in students">{{val}}</li>  
+            </ul>
         </div>
 </body>
 </html>
