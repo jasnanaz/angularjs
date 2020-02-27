@@ -28,9 +28,49 @@
         <div ng-init="students=[{name:'jasna',subject:'maths',age:21},
                                 {name:'anu',subject:'english',age:11},
                                 {name:'manu',subject:'it',age:10}]">
-            <ul>
-                 <li ng-repeat="val in students">{{val}}</li>  
-            </ul>
+            <input type="text" ng-model="search">                    
+            <table border="1px">
+               <tr>
+                    <th>Name</td>
+                    <th>Age</td>
+                    <th>Subject</td>
+                </tr>
+                
+                <tr ng-repeat="val in students">
+                    <td >{{val.name}}</td>
+                    <td >{{val.age}}</td>
+                    <td >{{val.subject}}</td>
+                </tr>
+            <table>
         </div>
+        <div ng-init="myStudents=[{name:'jasna',subject:'maths',age:21},
+                                {name:'anu',subject:'english',age:11},
+                                {name:'manu',subject:'it',age:10}]">
+           
+        <select ng-model="student" ng-options="val.name for val in myStudents"></select>
+        <p>{{student.name}}</p>
+        </div>
+    <div ng-init="students=[{name:'jasna',subject:'maths',age:21},
+                                {name:'anu',subject:'english',age:11},
+                                {name:'manu',subject:'it',age:10}]">
+            <input type="text" ng-model="search">                    
+            <table border="1px">
+               <tr>
+                    <th>Name</td>
+                    <th>Age</td>
+                    <th>Subject</td>
+                </tr>
+                
+                <tr ng-repeat="val in students | filter:search">
+                    <td >{{val.name}}</td>
+                    <td >{{val.age}}</td>
+                    <td >{{val.subject}}</td>
+                </tr>
+            <table>
+        </div>
+
+        
+
+        
 </body>
 </html>
