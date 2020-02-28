@@ -6,12 +6,30 @@
         angular.module('myApp',[]).controller('myController',myControllerFun)
         function myControllerFun($scope){
             $scope.name="jasna"
+            $scope.student=[
+                            {name:'jasna',subject:'maths',age:21},
+                            {name:'anu',subject:'english',age:11},
+                            {name:'manu',subject:'it',age:10}
+                            ]
+            $scope.number=0
+            $scope.increment=function(){
+                $scope.number=$scope.number+1
+            } 
+            $scope.decrement=function(){
+                $scope.number=$scope.number-1
+            } 
         }
     </script>
 </head>
 <body>
      <div ng-controller="myController">
         <p>{{name}}</p>
+        <ul>
+            <li ng-repeat="val in student" >name:{{val.name}}</li>
+        </ul>
+        <button ng-click="increment()">+1</button>
+        <button ng-click="decrement()">-1</button>
+        <p>{{number}}</p>
     </div>
 </body>
 </html>
